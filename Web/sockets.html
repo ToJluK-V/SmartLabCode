@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <title>Smartsockets</title>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Управлени микроклиматом в умной лаборатории" />
+   <meta name="author" content="HTML5BOOK" />
+   <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/alecive/flatwoken/32/Apps-Settings-icon.png" />
+   <link rel="stylesheet" type="text/css" href="single.css" />
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src = script.js></script>
+   <style>
+      body {
+         background: #181b1f;
+      }
+
+      h1 {
+         color: white;
+      }
+
+      p {
+         color: #CCCCDC;
+      }
+
+      nav a {
+         color: #CCCCDCA6;
+      }
+
+      .sliding-button {
+         text-decoration: none;
+         outline: none;
+         color: white;
+         display: inline-block;
+         position: relative;
+         padding: 20px 30px;
+         border: 1px solid;
+         border-image: linear-gradient(#fac00d, #f8a515, #f5861d, #f15a29, #f15a29);
+         border-image-slice: 1;
+         margin: 0px 20px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         overflow: hidden;
+         letter-spacing: 2px;
+         transition: .8s cubic-bezier(.165, .84, .44, 1);
+      }
+
+      .sliding-button:before {
+         content: '';
+         position: absolute;
+         left: 0;
+         top: 0;
+         height: 0;
+         width: 100%;
+         z-index: -1;
+         color: white;
+         background: linear-gradient(#fac00d, #f8a515, #f5861d, #f15a29, #f15a29);
+         transition: .8s cubic-bezier(.165, .84, .44, 1);
+      }
+
+      .sliding-button:hover {
+         background: rgba(255, 255, 255, 0);
+      }
+
+      .sliding-button:hover:before {
+         bottom: 0%;
+         top: auto;
+         height: 100%;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="top"><a href="http://192.168.100.4:3000/d/Ci_btW97z/first-dashboard?orgId=1">Перейти к просмотру текущего состояния микроклимата</a></div>
+   <div class="container">
+      <header>
+         <h1> <b>Умная лаборатория</b></h1>
+         <p>Настройте температуру, влажность </p>
+		 <p>и степень проветривания</p>	
+      </header>
+	 
+      <div class="button-container">
+	    <h2>Обогреватель</h2>
+         <a href="#" class="sliding-button" id="temperature1_btn">Вкл</a><a href="#" class="sliding-button" id="temperature0_btn">Выкл</a>
+		 
+	  <h2>Увлажнитель</h2>
+		 <a href="#" class="sliding-button" id="humidity1_btn">Вкл</a><a href="#" class="sliding-button" id="humidity0_btn">Выкл</a>
+		 
+	  <h2>Окно</h2>
+		 <a href="#" class="sliding-button" id="ventilation1_btn">Открыть</a><a href="#" class="sliding-button" id="ventilation0_btn">Закрыть</a>
+      </div>
+   </div>
+</body>
+
+</html>
